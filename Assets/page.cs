@@ -31,8 +31,6 @@ public class page : MonoBehaviour {
 	}
 
 	void pickUp(){
-		if (Input.GetKey (KeyCode.Space)) {
-			
-		}
+			print ("Picked Up");
 	}
 }

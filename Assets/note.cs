@@ -17,5 +17,8 @@ public class note : MonoBehaviour {
 	
 	}
 
-
+	void OnTriggerEnter2D(Collider2D other){
+		other.SendMessage("pickUp");
+		Destroy (this.gameObject);
+	}
 }
