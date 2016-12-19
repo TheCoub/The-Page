@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class page : MonoBehaviour {
+public class Page : MonoBehaviour {
 
 	public Rigidbody2D phys;
 	public float moveSpeed = 1.0f;
@@ -30,7 +30,9 @@ public class page : MonoBehaviour {
 		}
 	}
 
-	void pickUp(){
-			print ("Picked Up");
+	public void pickUp(Note inNote){
+		string message = inNote.message;
+		int defNum = inNote.defNum;
+		print (message);
 	}
 }
