@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Page : MonoBehaviour {
 
 	public Rigidbody2D phys;
 	public float moveSpeed = 1.0f;
+
+	private List<Note> carriedNotes = new List<Note>();
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +36,20 @@ public class Page : MonoBehaviour {
 	public void pickUp(Note inNote){
 		string message = inNote.message;
 		int defNum = inNote.defNum;
+		string intendedCountry = inNote.intendedCountry;
 		print (message);
+		carriedNotes.Add (inNote);
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		Delegate del = other.GetComponent<Delegate> ();
+		print ("Collided");
+		if (del != null) {
+			print ("Yep, It's a delegate");
+			if(del.DeliverNote(carriedNotes)){
+				carriedNotes.RemoveAt (0);
+				print ("This is the Important one");
+			}
+		}
 	}
 }

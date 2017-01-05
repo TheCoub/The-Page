@@ -7,11 +7,11 @@ public class Note : MonoBehaviour {
 
 	public string message = "Hi, wanna play hangman?";
 	public int defNum = 1;
+	public string intendedCountry = "DPRK";
 	//Make a list that holds the defnum and Message and have the initialize randomly pick a note.
 
 	// Use this for initialization
 	void Start () {
-		print (message);
 	}
 	
 	// Update is called once per frame
