@@ -41,8 +41,8 @@ public class Page : MonoBehaviour {
 		carriedNotes.Add (inNote);
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		Delegate del = other.GetComponent<Delegate> ();
+	void OnCollisionEnter2D(Collision2D other){
+		Delegate del = other.gameObject.GetComponent<Delegate> ();
 		print ("Collided");
 		if (del != null) {
 			print ("Yep, It's a delegate");
